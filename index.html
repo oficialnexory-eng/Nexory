@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexory | Netflix, Disney+, HBO Max, Spotify y más</title>
+<meta name="description" content="Perfiles y cuentas de streaming, música e IA. Elige, escribe por WhatsApp y recibe tu acceso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6FC;--surface:#fff;--ink:#131B33;--muted:#5A6482;--line:#DCE1F0;--accent:#4B2EE8;--accent-ink:#fff;--wa:#128C4A;--wa-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1326;--surface:#171E3A;--ink:#EDF0FC;--muted:#A3ACCB;--line:#2A3358;--accent:#8E7CFF;--accent-ink:#0E1326;--wa:#25D366;--wa-ink:#06210F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1326;--surface:#171E3A;--ink:#EDF0FC;--muted:#A3ACCB;--line:#2A3358;--accent:#8E7CFF;--accent-ink:#0E1326;--wa:#25D366;--wa-ink:#06210F;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;text-decoration:none}
+.brand span{color:var(--accent)}
+.hdr-link{font-size:.95rem;font-weight:500;text-decoration:none;border-bottom:2px solid var(--accent)}
+.hero{padding:36px 0 28px}
+.hero h1{font-size:clamp(2.2rem,8vw,4.2rem);font-weight:800;letter-spacing:-.035em;max-width:14ch}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.1rem;margin:16px 0 26px}
+.switch{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
+.switch button{font:inherit;font-weight:700;border:0;background:none;color:var(--muted);padding:11px 22px;border-radius:999px;cursor:pointer;min-height:44px}
+.switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.switch-help{display:block;margin-top:10px;font-size:.9rem;color:var(--muted)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:22px 0 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{font:inherit;font-weight:500;white-space:nowrap;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:40px}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:16px 0 40px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.top{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem;flex:none}
+.card h3{font-size:1.15rem;font-weight:600}
+.note{font-size:.88rem;color:var(--muted);margin:2px 0 0}
+.price{font-family:"Bricolage Grotesque",sans-serif;font-size:2rem;font-weight:800;letter-spacing:-.02em}
+.mode{font-size:.88rem;color:var(--muted);margin-top:-8px}
+.buy{margin-top:auto;display:block;text-align:center;background:var(--wa);color:var(--wa-ink);font-weight:700;text-decoration:none;padding:13px 16px;border-radius:12px;min-height:46px}
+.buy:hover{filter:brightness(1.07)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:20px 0 44px;border-top:1px solid var(--line);counter-reset:s;list-style:none;margin:0}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:700;margin-bottom:10px}
+.steps strong{display:block;font-size:1.05rem}
+.steps span{color:var(--muted)}
+h2{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;padding-top:30px}
+.faq{padding-bottom:40px;max-width:720px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{font-weight:700;cursor:pointer;min-height:28px}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0 96px;color:var(--muted);font-size:.9rem}
+.float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--wa);color:var(--wa-ink);font-weight:700;text-decoration:none;padding:14px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.25);min-height:48px}
+@media (prefers-reduced-motion:no-preference){.chip,.switch button,.buy{transition:background .15s,color .15s,filter .15s}}
+.badges{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.95rem}
+.sec{padding:8px 0 28px}
+.sec>p{color:var(--muted);max-width:60ch;margin:8px 0 16px}
+.sec h3{font-size:1.1rem;margin:18px 0 4px}
+.list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 24px}
+.list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.game{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.game h3{font-size:1.15rem}
+.game p{margin:0;color:var(--muted);font-size:.95rem}
+.game .buy{margin-top:10px}
+.club{background:var(--accent);color:var(--accent-ink);border-radius:22px;padding:26px;margin:12px 0 28px}
+.club h2{padding-top:0}
+.club p{margin:10px 0 0}
+.club ul{margin:14px 0 0;padding-left:20px}
+.club li{margin-bottom:6px}
+.warn{border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin-top:20px}
+.btn{display:inline-block;margin-top:6px;background:var(--wa);color:var(--wa-ink);font-weight:700;text-decoration:none;padding:13px 20px;border-radius:12px}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:46px}
+.opt:hover{border-color:var(--accent)}
+.opt strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#">Nexory<span>.</span></a>
+    <a class="hdr-link" href="#como-comprar">Cómo comprar</a>
+  </header>
+
+  <section class="hero">
+    <h1>Tus plataformas favoritas, sin vueltas.</h1>
+    <p>Servicios digitales, entretenimiento, streaming y gaming reunidos en un solo lugar. Elegí, escribinos por WhatsApp y activamos rápido.</p>
+    <ul class="badges"><li>Atención profesional</li><li>Compra segura</li><li>Soporte y garantía</li><li>Activación rápida</li><li>Atención personalizada</li></ul>
+  </section>
+
+  <h2>Streaming y entretenimiento premium</h2>
+  <p style="color:var(--muted);max-width:60ch;margin:8px 0 0">Disfrutá tus plataformas favoritas con perfiles personalizados y opciones adaptadas a tus necesidades.</p>
+  <div class="chips" id="chips" role="group" aria-label="Categorías"></div>
+  <main class="grid" id="grid" aria-live="polite"></main>
+
+  <section class="sec" id="servicios">
+    <h2>Servicios digitales</h2>
+    <p>Soluciones digitales para uso personal, entretenimiento y emprendimientos.</p>
+    <ul class="list">
+      <li>Aplicaciones y juegos para diferentes dispositivos</li><li>Películas y series</li><li>Cursos digitales con certificación</li><li>Creación de CV profesionales</li><li>Invitaciones digitales personalizadas</li><li>Edición y diseño de fotografías</li><li>Desarrollo de páginas web</li><li>Gestión de redes sociales</li><li>Servicios de internet para personal y TV</li><li>Kits digitales para emprendedores</li><li>Libros digitales en diferentes formatos</li><li>Audiolibros</li>
+    </ul>
+  </section>
+
+  <section class="sec" id="gaming">
+    <h2>Nexory Gaming Store</h2>
+    <p>Todo para llevar tu experiencia gaming al siguiente nivel.</p>
+    <div class="grid" id="games"></div>
+  </section>
+
+  <section class="club" id="club">
+    <h2>Llegó Nexory Club</h2>
+    <p>Queremos premiar tu confianza. Cada vez que comprás o renovás un servicio digital, sumás sellos para conseguir descuentos y beneficios exclusivos.</p>
+    <ul><li>5 sellos: $1.000 de descuento.</li><li>10 sellos: $2.000 de descuento o un beneficio gratis. Al completar el cartón de 10 sellos, te damos uno nuevo cuando termine tu premio.</li></ul>
+  </section>
+
+  <section class="sec" id="por-que">
+    <h2>¿Por qué elegir Nexory?</h2>
+    <p>No se trata solamente de vender. Queremos que tengas una experiencia segura y acompañada.</p>
+    <ul class="list">
+      <li>Perfiles personalizados a tu nombre</li><li>Garantía durante la vigencia del servicio</li><li>Pago seguro en servicios digitales: 50% al iniciar y 50% al entregar</li><li>Soporte mediante doble canal de contacto</li><li>Acceso a nuestro grupo exclusivo de clientes</li><li>Atención personalizada y asistencia ante inconvenientes</li>
+    </ul>
+  </section>
+
+  <ol class="steps" id="como-comprar">
+    <li><strong>Elegí</strong><span>Buscá la plataforma y el tipo de acceso que querés.</span></li>
+    <li><strong>Escribinos</strong><span>El botón abre WhatsApp con tu pedido ya escrito.</span></li>
+    <li><strong>Paga y recibe</strong><span>Coordinamos el pago por el chat y activamos tu servicio.</span></li>
+  </ol>
+
+  <section class="sec" id="pagos">
+    <h2>Medios de pago</h2>
+    <h3>Transferencia</h3>
+    <p style="margin:0;color:var(--muted)">Solo a nuestra cuenta bancaria de Personal Pay. Enviá el comprobante después de pagar.</p>
+    <h3>Efectivo</h3>
+    <p style="margin:0;color:var(--muted)">Punto de encuentro en Centro o Terminal Nueva de San Miguel de Tucumán. Coordinamos día y horario antes. No hace falta enviar comprobante.</p>
+    <h3>Pago Fácil o Rapipago</h3>
+    <p style="margin:0;color:var(--muted)">Podés pagar por cualquiera de los dos. Enviá el comprobante una vez hecho el pago.</p>
+    <p class="warn"><strong>Importante:</strong> en todos los medios de pago, excepto efectivo, tenés que enviar el comprobante para que verifiquemos el pago y activemos el servicio.</p>
+  </section>
+
+  <section class="sec" id="horario">
+    <h2>Horario de atención</h2>
+    <p>Lunes a sábado, de 09:00 a 23:30 hs. Los domingos no se realizan ventas.</p>
+    <p>Soporte los domingos: escribinos para resolver problemas o inconvenientes con cualquier servicio adquirido.</p>
+    <a class="btn" href="https://chat.whatsapp.com/LxC8GFbltfa3PEUlF6GLhb" target="_blank" rel="noopener">Unirme al grupo de clientes</a>
+  </section>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Qué incluye cada plan?</summary><p>Cada producto indica su duración y la cantidad de perfiles. Si tenés dudas, consultanos por WhatsApp antes de pedir.</p></details>
+    <details><summary>¿Cómo se hace el pago?</summary><p>Aceptamos transferencia, efectivo y Pago Fácil o Rapipago. Mirá los detalles en la sección Medios de pago.</p></details>
+    <details><summary>¿No encontrás lo que buscás?</summary><p>Preguntanos por WhatsApp. Te decimos si está disponible.</p></details>
+  </section>
+
+  <footer>Nexory Oficial. Digital, seguro, profesional, confiable.</footer>
+</div>
+
+<a class="float" id="float" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+
+<script>
+var PHONE="5493816167503";
+var P=[
+{n:"Netflix",c:"tv",l:"N",k:"#E50914",t:"Series y películas",o:[["",10000]]},
+{n:"Prime Video",c:"tv",l:"P",k:"#0589BA",t:"Series y películas",o:[["",7500]]},
+{n:"HBO Max",c:"tv",l:"H",k:"#6B2FE0",t:"Series y películas",o:[["",6500]]},
+{n:"Disney Premium",c:"tv",l:"D",k:"#113CCF",t:"Películas y series",o:[["",8500]]},
+{n:"Vix TV",c:"tv",l:"V",k:"#E85D00",t:"Series, novelas y fútbol",o:[["",5000]]},
+{n:"Crunchyroll",c:"tv",l:"C",k:"#D9630F",t:"Anime",o:[["",6500]]},
+{n:"Paramount+",c:"tv",l:"P",k:"#0064FF",t:"Series y películas",o:[["",9500]]},
+{n:"YouTube Premium",c:"tv",l:"Y",k:"#E02020",t:"Sin anuncios",o:[["",7000]]},
+{n:"Spotify Premium",c:"tv",l:"S",k:"#17803A",t:"Música sin anuncios",o:[["",7500]]},
+{n:"TV Plus",c:"tv",l:"T",k:"#5B6478",t:"Televisión digital",o:[["",9500]]},
+{n:"Apple TV",c:"tv",l:"A",k:"#2B2B33",t:"1 perfil por 30 días",o:[["",6500]]},
+{n:"DramaBox",c:"tv",l:"D",k:"#C2185B",t:"App apk, 5 perfiles por 30 días",o:[["",8500]]},
+{n:"Flow",c:"tv",l:"F",k:"#E0245E",t:"1 perfil por 30 días",o:[["",10000]]},
+{n:"ChatGPT",c:"ia",l:"G",k:"#10A37F",t:"Asistente de IA",o:[["",16000]]},
+{n:"Gemini Pro",c:"ia",l:"G",k:"#4B6BFB",t:"Asistente de IA",o:[["3 meses",8000],["6 meses",10000],["12 meses",15000],["18 meses",20000]]},
+{n:"Canva Pro",c:"ia",l:"C",k:"#0A9EA6",t:"Plan de 1 año",o:[["",10000]]},
+{n:"NordVPN",c:"ia",l:"N",k:"#2A5BD7",t:"1 perfil por 30 días",o:[["",7000]]}
+];
+var CATS=[["all","Todo"],["tv","Streaming"],["ia","IA y productividad"]];
+var cat="all";
+var grid=document.getElementById("grid"),chips=document.getElementById("chips"),fl=document.getElementById("float");
+function money(v){return "$"+v.toLocaleString("es-AR")}
+function wa(t){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(t)}
+function render(){
+  var h="";
+  P.forEach(function(x){
+    if(cat!=="all"&&x.c!==cat)return;
+    var body="";
+    if(x.o.length===1){body='<div class="price">'+money(x.o[0][1])+'</div><a class="buy" target="_blank" rel="noopener" href="'+wa("Hola Nexory, quiero "+x.n+". ¿Está disponible?")+'">Pedir por WhatsApp</a>'}
+    else{x.o.forEach(function(o){body+='<a class="opt" target="_blank" rel="noopener" href="'+wa("Hola Nexory, quiero "+x.n+" por "+o[0]+". ¿Está disponible?")+'"><span>'+o[0]+'</span><strong>'+money(o[1])+'</strong></a>'})}
+    h+='<article class="card"><div class="top"><div class="logo" style="background:'+x.k+'" aria-hidden="true">'+x.l+'</div><div><h3>'+x.n+'</h3><p class="note">'+x.t+'</p></div></div>'+body+'</article>';
+  });
+  grid.innerHTML=h;
+}
+function renderChips(){
+  chips.innerHTML="";
+  CATS.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";b.className="chip";b.textContent=c[1];
+    b.setAttribute("aria-pressed",String(cat===c[0]));
+    b.onclick=function(){cat=c[0];renderChips();render()};
+    chips.appendChild(b);
+  });
+}
+var G=[["Roblox","Robux, cuentas e ítems","Adopt Me, Blox Fruits, MM2 y más"],["Fortnite","Pavos, skins, cuentas y gift cards",""],["Free Fire","Diamantes, cuentas y tarjetas",""],["Clash Royale","Cuentas y gemas",""],["Minecraft","Cuentas, Minecoins e ítems",""],["Valorant","VP, cuentas y gift cards",""],["Genshin Impact","Cuentas y cristales",""]];
+var gh="";
+G.forEach(function(g){gh+='<article class="game"><h3>'+g[0]+'</h3><p>'+g[1]+'</p>'+(g[2]?'<p>'+g[2]+'</p>':'')+'<a class="buy" target="_blank" rel="noopener" href="'+wa("Hola Nexory, quiero consultar por "+g[0]+".")+'">Consultar por WhatsApp</a></article>'});
+document.getElementById("games").innerHTML=gh;
+fl.href=wa("Hola Nexory, tengo una consulta.");
+renderChips();render();
+</script>
+</body>
+</html>
